@@ -5,26 +5,33 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { Screenshot } from "@ionic-native/screenshot";
+import {ListPage} from "../pages/list/list";
+import {TimerComponent} from "../components/timer/timer";
+import {ItemDetailsPage} from "../pages/item-details/item-details";
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    declarations: [
+        MyApp,
+        ListPage,
+        ItemDetailsPage,
+        TimerComponent
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp)
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        ListPage,
+        ItemDetailsPage
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        Screenshot,
+        {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ]
 })
 export class AppModule {}

@@ -1,0 +1,44 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Item Details</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Selected Order</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                name: {{selectedOrder.name}}
+            </ion-item>
+            <ion-item>
+                timeOut: {{selectedOrder.timeOut}}
+            </ion-item>
+            <ion-item>
+                orderId: {{selectedOrder.orderId}}
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngFor="let event of eventsReceived">
+        <ion-card-header>
+            <ion-card-title>Event received</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                Event id: {{event.id}}
+            </ion-item>
+            <ion-item>
+                Event value: {{event.value}}
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

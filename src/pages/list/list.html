@@ -1,0 +1,30 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>List</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card *ngFor="let sector of order.sectors">
+
+        <ion-card-header>
+            <ion-card-title>{{ sector.name }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <button ion-button detail-none [disabled]="sector.timeOut" (click)="itemTapped($event, sector, order.user)">
+                Open details
+            </button>
+            <!--<timer [timeInSeconds]="timeInSeconds(sector)" [order]="sector.orderId"></timer>-->
+            <timer [timeInSeconds]="5" [order]="sector.orderId"></timer>
+        </ion-card-content>
+
+    </ion-card>
+
+
+
+</ion-content>
